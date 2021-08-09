@@ -78,3 +78,18 @@ You can run this project by following commands in project directory
 
 ```
 
+
+
+
+
+
+
+
+
+
+<img width="628" alt="29a" src="https://user-images.githubusercontent.com/54539712/128727362-2549f640-b1bd-41be-a858-0fbc98ede058.png">
+<img width="653" alt="30a" src="https://user-images.githubusercontent.com/54539712/128727391-c43a30b6-1ab8-4cf0-8b62-3d901064d3c9.png">
+<img width="867" alt="31" src="https://user-images.githubusercontent.com/54539712/128727434-180cab2b-4054-43c9-87db-fe88299f1720.png">
+<img width="871" alt="32" src="https://user-images.githubusercontent.com/54539712/128727459-236f844f-5525-4f21-99ae-d5912961338f.png">
+<img width="874" alt="33" src="https://user-images.githubusercontent.com/54539712/128727494-c1daee59-4758-4f82-8442-5604b9c69493.png">
+<img width="650" alt="35a" src="https://user-images.githubusercontent.com/54539712/128727525-71d3db91-b98e-4bee-b05f-2562480d0bc5.png">
