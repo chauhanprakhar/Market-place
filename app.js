@@ -6,15 +6,14 @@ const mongoose = require('mongoose')
 app.use(express.json());
 app.use(router)
 const PORT = 5000
-const DB_URL = "mongodb+srv://prakhar:201951116@cluster0.29cka.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const DB_URL = ""
 
 require('./models/user')
 require('./models/product')
 require('./models/order')
 
 app.use(require('./routes/user'))
-app.use(require('./routes/buyer'))
-app.use(require('./routes/seller'))
+app.use(require('./routes/rest'))
 
 
 const connect = (url = DB_URL, opts = {}) => {
