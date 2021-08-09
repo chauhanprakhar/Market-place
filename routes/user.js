@@ -10,38 +10,6 @@ const newToken = payload => {
       expiresIn: "1d",
     });
   };
-  
-// token verification
-const verifyToken = token =>
-    new Promise((resolve, reject) => {
-      jwt.verify(token, "secretxyz", (err, payload) => {
-        if (err) return reject(err);
-        resolve(payload);
-    });
-});
-
-const protect = async (req, res, next) => {
-    const bearer = req.headers.authorization;
-    if (!bearer || !bearer.startsWith('Bearer ')) {
-      return res.status(401).send({message: 'Unauthorized Access'});
-    }
-    const token = bearer.split('Bearer ')[1].trim();
-    let payload, user;
-    try {
-      payload = await verifyToken(token);
-      user = await User.findById(payload.id)
-        .select('_id email role')
-        .lean()
-        .exec();
-      if (user === null) {
-        return res.status(401).send({message: 'Unauthorized Access'});
-      }
-    } catch (e) {
-      return res.status(401).send({message: 'Unauthorized Access'});
-    }
-    req.user = { id: user._id, email: user.email, role: user.role, name: user.name};
-    next();
-};
 
 router.post('/signup', async (req,res) => {
     if (!req.body.email || !req.body.password) {
@@ -80,10 +48,10 @@ router.post('/signup', async (req,res) => {
   }
     if(req.body.role = "Buyer"){
     try {
-      const user = await Buyer.create({
+      const user = await User.create({
         email: req.body.email,
         password: req.body.password,
-        name: req.body.name.Buyer,
+        name: req.body.name,
         role: req.body.role
       });
       const token = newToken({
@@ -134,4 +102,6 @@ router.post('/signin', async (req,res) => {
   }
 });
 
-module.exports = router, protect
+module.exports = router
+
+
