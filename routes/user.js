@@ -27,7 +27,7 @@ router.post('/signup', async (req,res) => {
         console.log(e);
         res.status(500).end();
       }
-      if(req.body.role = "Seller"){
+      if(req.body.role == "Seller"){
       try {
         const user = await User.create({
           email: req.body.email,
@@ -46,7 +46,7 @@ router.post('/signup', async (req,res) => {
         return res.status(500).end();
      }
   }
-    if(req.body.role = "Buyer"){
+    if(req.body.role == "Buyer"){
     try {
       const user = await User.create({
         email: req.body.email,
