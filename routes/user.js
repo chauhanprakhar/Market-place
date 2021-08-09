@@ -11,7 +11,7 @@ const newToken = payload => {
     });
   };
 
-router.post('/signup', async (req,res) => {
+router.post('/api/auth/register', async (req,res) => {
     if (!req.body.email || !req.body.password) {
         return res.status(422).send({ message: 'need email and password' });
       }
@@ -68,7 +68,7 @@ router.post('/signup', async (req,res) => {
 })
 
 
-router.post('/signin', async (req,res) => {
+router.post('/api/auth/login', async (req,res) => {
     if (!req.body.email || !req.body.password) {
       return res.status(400).send({ message: 'need email and password' });
     }

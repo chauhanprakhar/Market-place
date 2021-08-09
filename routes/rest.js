@@ -62,7 +62,7 @@ router.post('/api/seller/create-catalog',protect, async (req,res) =>{
       }
 })
 
-router.post('/api/buyer/create-order/:seller_id',protect, async (req,res) =>{
+router.post('/api/buyer/create-order',protect, async (req,res) =>{
     try {
         const data = await Order.insertMany(req.body)
         res.send(data);
